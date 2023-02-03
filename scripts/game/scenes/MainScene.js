@@ -1,20 +1,13 @@
 class MainScene {
     constructor() {
-        let ac = new TEST_ACTOR("MAIN");
-        ac.Position = new Vector2d(200, 200);
-        ac.Rotation = 0;
+        // let ac = new TEST_ACTOR("MAIN");
+        // ac.Position = new Vector2d(200, 200);
+        // ac.Rotation = 0;
 
-        RenderData.spawnActor(ac);
+        // RenderData.spawnActor(ac);
         
-        let str = "VULPELO";
-        for (let i = 0; i<str.length; i++)
-        { 
-            let c1 = new Letter(this.randomColor(), str[i], "50px Bold");
-            c1.Position = new Vector2d(100 + this.getRandomInt(8) + 50 * i, 100 + this.getRandomInt(10));
-            c1.Rotation = 0;
-
-            RenderData.spawnActor(c1);
-        }
+        this.generateText("VULPELO's site", new Vector2d(150, 100))
+        this.generateText("The quick brown fox jumps over a lazy dog", new Vector2d(25, 150))
     }
 
     getRandomInt(max) {
@@ -23,6 +16,17 @@ class MainScene {
 
     randomColor() {
         return "#".concat(this.getRandomInt(16777215).toString(16));
+    }
+
+    generateText(str, startPos) {
+        for (let i = 0; i<str.length; i++)
+        { 
+            let c1 = new Letter(this.randomColor(), str[i], "50px Bold");
+            c1.Position = new Vector2d(startPos.getX + this.getRandomInt(8) + 50 * i, startPos.getY + this.getRandomInt(10));
+            c1.Rotation = 0;
+
+            RenderData.spawnActor(c1);
+        }
     }
 
     start() {

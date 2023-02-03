@@ -34,6 +34,9 @@ class Vector2d {
     dot(vector) {
         return this.x*vector.getX + this.y*vector.getY;
     }
+    mul(number) {
+        return new Vector2d(this.x*number, this.y*number);
+    }
 
     // Angle is 0 when vector points up (-y). Angle rises clockwise from 0 to 2*PI - 0.(0)1
     radAngle() {
