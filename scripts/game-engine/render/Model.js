@@ -33,7 +33,7 @@ class Text extends Model {
         super(position);
         this.interactable = false;
         this.text = "None";
-        this.fontStyle ="16px Arial"; 
+        this.fontStyle ="40px Arial"; 
     }
 
     set Text(ntext) {
@@ -121,7 +121,7 @@ class Circle extends SimpleShape {
         ctx.arc(0, 0, this.dimensions[0], 0, 2*Math.PI);
         ctx.fillStyle = this.color;
         ctx.fill();
-        ctx.strokeStyle = '#000000';
+        ctx.strokeStyle = "transparent"//"'#000000';
         ctx.stroke();
         ctx.restore();
     }

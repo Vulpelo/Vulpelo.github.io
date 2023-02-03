@@ -11,14 +11,14 @@ function sleep(ms) {
 }
   
 async function demo() {
-    let t = new TEST();
+    let t = new MainScene();
     t.start();
 
     rend = new Rendering(data);
 
     controller = new Controller(data, rend);
 
-    setInterval(MAIN_LOOP, 10);
+    setInterval(MAIN_LOOP, 5);
 }
   
 
