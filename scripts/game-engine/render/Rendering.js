@@ -61,8 +61,8 @@ class Rendering {
 
     update() {
         this.renderData.update();
-
-        RenderData.window = document.getElementById("window");
+        if (RenderData.window === null)
+            RenderData.window = document.getElementById("window");
 
         this.ctx.clearRect(0,0, RenderData.window.clientWidth, RenderData.window.clientHeight);
         let i = 0;

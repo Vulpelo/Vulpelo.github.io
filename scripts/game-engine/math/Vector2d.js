@@ -56,7 +56,7 @@ class Vector2d {
     }
 
     length() {
-        return Math.sqrt( this.x * this.y);
+        return Math.sqrt(this.x * this.x + this.y * this.y);
     }
 
     normalize() {
