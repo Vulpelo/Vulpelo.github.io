@@ -64,7 +64,7 @@ class Letter extends Actor {
     onMouseOverlap() {
         this.damper = 0.99;
         this.goBack = false;
-        this.velocityDir = this.position.sub(InputController.mousePosition).mul(2)
+        this.velocityDir = this.position.sub(InputController.mousePosition)
         if (this.timer != null) {
             clearTimeout(this.timer)
         }
